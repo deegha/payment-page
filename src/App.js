@@ -21,23 +21,11 @@ class App extends Component {
      var cardNumberCheck  = false;
      var cardMonthCheck   = false;
      var cardYearCheck    = false;
-     var cardCvcCheck    = false;
+     var cardCvcCheck     = false;
+
   } 
 
-  componentDidUpdate(){  
-    this.handlePayButton(this.state.cardNumber, "cardNumber")
-    this.handlePayButton(this.state.cardMonth, "cardMonth")
-    this.handlePayButton(this.state.cardYear, "cardYear")
- 
-    if(this.activatepay){
-        document.getElementById('pay-btn').removeAttribute('disabled')
-        document.getElementById('pay-btn').classList.remove('input-disabled');
-    }else{
-        this.disableInput("pay-btn");
-    }
-  }
-
-  handlePayButton(context, checker){ 
+  handlePayButton = (context, checker) => { 
 
     if(context && this.isNumber(context.replace(/\s/g, ''))){
         switch(checker) {
@@ -67,7 +55,7 @@ class App extends Component {
      }
   }
   
-  handlePayment(event) {
+  handlePayment = (event) => {
     this.disableInput("card-number");
     this.disableInput("month");
     this.disableInput("year");
@@ -75,7 +63,7 @@ class App extends Component {
     document.getElementById("pay-btn").innerHTML = "Payment in process ..";
   }
 
-  selectPaymethod(event){
+  selectPaymethod = (event) => {
     if(event.target.id === "visaCard") {
        document.getElementById(event.target.id).classList.add('selected-class')
        document.getElementById("masterCard").classList.remove('selected-class')
@@ -85,25 +73,38 @@ class App extends Component {
     }
   }
 
-  disableInput($input){
+  disableInput = ($input) =>{
     document.getElementById($input).disabled = true;
     document.getElementById($input).classList.add('input-disabled')
   }
 
-  validateCardNumber(event){
+  validateCardNumber = (event) =>{
     this.setState({"cardNumber" : document.getElementById("card-number").value});
   }
-  validateMonth(event){
+  validateMonth = (event) => {
     this.setState({"cardMonth"  : document.getElementById("month").value});
   } 
-  validateYear(event){
+  validateYear = (event) => {
     this.setState({"cardYear"   : document.getElementById("year").value});
   }
-  validateCvc(event){
+  validateCvc = (event) =>{
     this.setState({"cardCvc"    : document.getElementById("cvc").value});
   }
  isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
+  }
+
+  componentDidUpdate(){  
+    this.handlePayButton(this.state.cardNumber, "cardNumber")
+    this.handlePayButton(this.state.cardMonth, "cardMonth")
+    this.handlePayButton(this.state.cardYear, "cardYear")
+ 
+    if(this.activatepay){
+        document.getElementById('pay-btn').removeAttribute('disabled')
+        document.getElementById('pay-btn').classList.remove('input-disabled');
+    }else{
+        this.disableInput("pay-btn");
+    }
   }
 
   render() {
