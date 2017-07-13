@@ -1,0 +1,96 @@
+* {
+  border-radius: 0 !important;
+}
+.wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #1abc9c;
+    display: flow-root;
+    top: 60px;
+    position: relative;
+}
+.margin-bottom {
+  margin-bottom: 20px;
+}
+.payment-btn{
+  background-color: #2ecc71;
+  color: #ecf0f1;
+  padding: 10px 20px;
+  border: none;
+  width: 100%;
+}
+
+.input-disabled {
+   background-color: #95a5a6;
+}
+
+#error-label{
+  color :   #c0392b;
+  font-weight: 800;
+}
+
+.car-image-holder{
+  max-width: 200px;
+}
+.img{
+    width:100;
+}
+
+.total-amount-display{
+  background-color: #fff;
+  color: #bdc3c7;
+  font-weight: 700;
+  padding: 7px 11px;
+  font-size: 16px;
+}
+
+.cc-selector {
+  display: inline-flex;
+  justify-content: space-between;
+}  
+
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+.visa{background-image:url(http://i.imgur.com/lXzJ1eB.png);}
+.mastercard{background-image:url(http://i.imgur.com/SJbRQF7.png);}
+
+.cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:55px;height: 30px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+.selected-class {
+   -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+/* Extras */
+a:visited{color:#888}
+a{color:#444;text-decoration:none;}
+p{margin-bottom:.3em;}
